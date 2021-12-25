@@ -1,3 +1,4 @@
+import 'package:DAAPP/Widgets/RoundedButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:group_button/group_button.dart';
@@ -23,12 +24,34 @@ class HomePage extends StatelessWidget {
           color: Color.fromRGBO(131, 238, 255,
               100), //neon blue, find a way to make a neon blue method
         ),
-        GroupButton(
+        SizedBox(
+          height: 75,
+        ),
+        Column(
+          children: [
+            Row(
+              children: [
+                RoundedButton(
+                    onPressed: () => print("Button presses"),
+                    buttonName: "Comedy"
+
+                ),
+              ],
+            ),
+            Row(
+              children: [
+
+
+              ],
+            )
+          ],
+        )
+        /*GroupButton(
           isRadio: false,
           spacing: 10,
           onSelected: (index, isSelected) => print('$index button is selected'),
           buttons: ["Comedy", "Horror", "Fantasy", "Documentary", "text", "Action"],
-        )
+        )*/
         ],
       ),
     );
