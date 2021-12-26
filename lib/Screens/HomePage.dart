@@ -11,47 +11,82 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(0, 0, 0, 100),
+      backgroundColor: Colors.black,
       body:
       Column(
         children: [
-        SizedBox(
-          height: 500,
-        ),
+          Container(
+            height: 400,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              physics: const AlwaysScrollableScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) => Card(
+
+                child:
+                Center(child: Text('Dummy Card Text-------------')
+                ),
+              ),
+              separatorBuilder: (context, _) => SizedBox(width:50, ),
+              itemCount: 30
+            ),
+          ),
         Divider(
           height: 5,
           thickness: 5,
-          color: Color.fromRGBO(131, 238, 255,
-              100), //neon blue, find a way to make a neon blue method
+          color: Colors.cyanAccent //neon blue, find a way to make a neon blue method
         ),
         SizedBox(
-          height: 75,
+          height: 30,
         ),
         Column(
           children: [
             Row(
               children: [
+                SizedBox(width: 30,),
                 RoundedButton(
-                    onPressed: () => print("Button presses"),
-                    buttonName: "Comedy"
-
+                    onTap: () => print("Button presses"),
+                    buttonName: "Comedy",
+                    sColor: Colors.yellow,
+                ),
+                SizedBox(width: 300,),
+                RoundedButton(
+                    onTap: () => print("Button presses"),
+                    buttonName: "Horror",
+                    sColor: Colors.red,
+                ),
+                SizedBox(width: 300,),
+                RoundedButton(
+                    onTap: () => print("Button presses"),
+                    buttonName: "Genre",
+                    sColor: Colors.blue,
                 ),
               ],
             ),
+            SizedBox(height: 100,),
             Row(
               children: [
-
-
+                SizedBox(width: 30,),
+                RoundedButton(
+                  onTap: () => print("Button presses"),
+                  buttonName: "Documentary",
+                  sColor: Colors.green,
+                ),
+                SizedBox(width: 300,),
+                RoundedButton(
+                  onTap: () => print("Button presses"),
+                  buttonName: "Cooking",
+                  sColor: Colors.deepOrangeAccent,
+                ),
+                SizedBox(width: 300,),
+                RoundedButton(
+                  onTap: () => print("Button presses"),
+                  buttonName: "Kids",
+                  sColor: Colors.purple,
+                ),
               ],
             )
           ],
         )
-        /*GroupButton(
-          isRadio: false,
-          spacing: 10,
-          onSelected: (index, isSelected) => print('$index button is selected'),
-          buttons: ["Comedy", "Horror", "Fantasy", "Documentary", "text", "Action"],
-        )*/
         ],
       ),
     );
