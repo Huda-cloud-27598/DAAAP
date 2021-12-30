@@ -1,4 +1,5 @@
 import 'package:DAAPP/Screens/HomePage.dart';
+import 'package:DAAPP/Screens/Results%20page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) =>HomePage(),
+        'resultsPage': (context) => ResultsPage(),
       }
 
     );
